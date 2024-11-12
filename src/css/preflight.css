@@ -27,6 +27,7 @@
 
 html,
 :host {
+  color: var(--navy-blue);
   line-height: var(--leading-normal);
   /* 1 */
   -webkit-text-size-adjust: 100%;

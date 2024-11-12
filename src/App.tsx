@@ -1,13 +1,20 @@
-import Button from '@/components/Button/Button';
+import Button from "@/components/Button/Button";
 
 function App() {
-
   return (
     <div>
-      <h1>React TypeScript Template</h1>
-      <Button label="Click me" onClick={() => console.log('Button clicked')} />
+      <Button
+        label="Seleccionar Plan"
+        variant="primary"
+        onClick={() => console.log("Button clicked")}
+      />
+      <Button
+        label="Cotiza aquí"
+        size="lg"
+        onClick={() => console.log("Button clicked")}
+      />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

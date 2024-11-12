@@ -1,9 +1,21 @@
-import { ButtonProps } from '@/types/types';
-import styles from './Button.module.css';
+import { ButtonProps } from "@/types/types";
+import styles from "./Button.module.css";
 
-function Button({ label, variant = 'secondary', onClick }: ButtonProps): JSX.Element {
+function Button({
+  label,
+  variant = "secondary",
+  size = "md",
+  onClick,
+}: ButtonProps): JSX.Element {
   return (
-    <button className={`${styles.btn} ${styles[`btn--${variant}`]}`} onClick={onClick}>{label}</button>
+    <button
+      className={`${styles.btn} ${styles[`btn--${variant}`]} ${
+        styles[`btn--${size}`]
+      }`}
+      onClick={onClick}
+    >
+      {label}
+    </button>
   );
 }
 

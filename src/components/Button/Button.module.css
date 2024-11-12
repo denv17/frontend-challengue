@@ -1,23 +1,51 @@
 .btn {
-  background-color: #4caf50;
+  align-items: center;
+  background-color: transparent;
   border-radius: var(--rounded-full);
   border: none;
+  border: var(--border-2) solid transparent;
   color: var(--white);
-  cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   font-family: var(--font-primary);
-  font-size: 16px;
+  font-size: var(--text-lg);
   font-weight: var(--font-bold);
-  margin: 4px 2px;
-  padding: 15px 32px;
+  justify-content: center;
+  letter-spacing: var(--tracking-wider);
+  line-height: var(--leading-none);
   text-align: center;
-  text-decoration: none;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
 .btn--primary {
   background-color: var(--red);
+
+  &:hover {
+    background-color: var(--white);
+    border-color: var(--red);
+    color: var(--red);
+  }
 }
 
 .btn--secondary {
   background-color: var(--black);
+
+  &:hover {
+    background-color: var(--white);
+    border-color: var(--black);
+    color: var(--black);
+  }
+}
+
+.btn--md {
+  padding: var(--spacing-3) var(--spacing-8);
+}
+
+.btn--lg {
+  padding: var(--spacing-4) var(--spacing-10);
+}
+
+@media (min-width: 1024px) {
+  .btn--lg {
+    padding: var(--spacing-5) var(--spacing-10);
+  }
 }
