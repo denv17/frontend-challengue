@@ -2,7 +2,7 @@
   background-color: #4caf50;
   border-radius: var(--rounded-full);
   border: none;
-  color: white;
+  color: var(--white);
   cursor: pointer;
   display: inline-block;
   font-family: var(--font-primary);
@@ -15,10 +15,9 @@
 }
 
 .btn--primary {
-  background-color: #008cba;
+  background-color: var(--red);
 }
 
 .btn--secondary {
-  background-color: #e7e7e7;
-  color: black;
+  background-color: var(--black);
 }
