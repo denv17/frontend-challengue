@@ -2,7 +2,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   label: string;
   variant?: "primary" | "secondary";
   size?: "md" | "lg";
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export type LayoutProps = {

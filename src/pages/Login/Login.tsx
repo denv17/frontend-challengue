@@ -3,6 +3,7 @@ import blurOne from "@/assets/images/blur-1.webp";
 import blurTwo from "@/assets/images/blur-2.webp";
 import loginImage from "@/assets/images/login.webp";
 import styles from "./Login.module.css";
+import { LoginForm } from "@/components/LoginForm";
 
 export const Login = () => {
   return (
@@ -30,26 +31,7 @@ export const Login = () => {
         />
 
         <div className={styles.login__content}>
-          <p className={styles.login__subtitle}>
-            Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra
-            asesoría. 100% online.
-          </p>
-
-          <form className={styles.login__form}>
-            <div className={styles.login__formGroup}>
-              <label htmlFor="email">Correo electrónico</label>
-              <input type="email" id="email" />
-            </div>
-
-            <div className={styles.login__formGroup}>
-              <label htmlFor="password">Contraseña</label>
-              <input type="password" id="password" />
-            </div>
-
-            <button type="submit" className={styles.login__submit}>
-              Iniciar sesión
-            </button>
-          </form>
+          <LoginForm />
         </div>
       </div>
     </section>
