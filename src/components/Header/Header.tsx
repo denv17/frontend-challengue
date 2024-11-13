@@ -1,4 +1,6 @@
 import { Logo } from "@/components/Logo";
+import { Icon } from "@/components/Icon";
+
 import styles from "./Header.module.css";
 
 export const Header = () => {
@@ -13,6 +15,7 @@ export const Header = () => {
           <span>¡Compra por este medio!</span>
 
           <a href="tel:+014116001" target="_blank" rel="noreferrer">
+            <Icon name="phone" />
             (01) 411 6001
           </a>
         </div>

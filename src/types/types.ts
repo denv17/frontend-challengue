@@ -1,4 +1,4 @@
-export type ButtonProps = {
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   label: string;
   variant?: "primary" | "secondary";
   size?: "md" | "lg";
@@ -24,4 +24,8 @@ export type ImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
   alt: string;
   width?: number;
   height?: number;
+};
+
+export type IconProps = React.SVGAttributes<HTMLOrSVGElement> & {
+  name: string;
 };

@@ -5,6 +5,7 @@
   right: 0;
   top: 0;
   width: 100%;
+  z-index: var(--z-index-10);
 }
 
 .header__container {
@@ -31,7 +32,14 @@
   }
 
   & a {
+    align-items: center;
+    display: flex;
     font-weight: var(--font-bold);
+    gap: var(--spacing-2);
+
+    & svg {
+      width: var(--spacing-5);
+    }
   }
 }
 

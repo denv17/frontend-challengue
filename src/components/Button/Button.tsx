@@ -6,6 +6,7 @@ export const Button = ({
   variant = "secondary",
   size = "md",
   onClick,
+  ...props
 }: ButtonProps): JSX.Element => {
   return (
     <button
@@ -13,6 +14,7 @@ export const Button = ({
         styles[`btn--${size}`]
       }`}
       onClick={onClick}
+      {...props}
     >
       {label}
     </button>
