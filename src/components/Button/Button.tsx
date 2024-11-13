@@ -1,12 +1,12 @@
 import { ButtonProps } from "@/types/types";
 import styles from "./Button.module.css";
 
-function Button({
+export const Button = ({
   label,
   variant = "secondary",
   size = "md",
   onClick,
-}: ButtonProps): JSX.Element {
+}: ButtonProps): JSX.Element => {
   return (
     <button
       className={`${styles.btn} ${styles[`btn--${variant}`]} ${
@@ -17,6 +17,4 @@ function Button({
       {label}
     </button>
   );
-}
-
-export default Button;
+};

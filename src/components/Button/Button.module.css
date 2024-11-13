@@ -9,6 +9,7 @@
   font-family: var(--font-primary);
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
+  gap: var(--spacing-2);
   justify-content: center;
   letter-spacing: var(--tracking-wider);
   line-height: var(--leading-none);
