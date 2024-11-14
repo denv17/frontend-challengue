@@ -13,6 +13,8 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   options?: { value: string; label: string }[];
   helperText?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onOptionChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  error?: boolean;
 };
 
 export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
@@ -21,11 +23,13 @@ export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   helperText?: string;
   classes?: string;
+  error?: boolean;
 };
 
 export type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   checked?: boolean;
+  error?: boolean;
 };
 
 export type TagProps = React.HTMLAttributes<HTMLSpanElement> & {

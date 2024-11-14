@@ -30,6 +30,16 @@
   }
 }
 
+.checkbox--error {
+  & input {
+    border-color: var(--red);
+  }
+
+  & .checkbox__label {
+    color: var(--red);
+  }
+}
+
 .checkbox__label {
   color: var(--black);
   font-family: var(--font-primary);

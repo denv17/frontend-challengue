@@ -8,10 +8,15 @@ export const Select = ({
   onChange,
   helperText,
   classes,
+  error,
   ...props
 }: SelectProps) => {
   return (
-    <div className={`${styles.select} ${classes}`}>
+    <div
+      className={`${styles.select} ${classes} ${
+        error ? styles["select--error"] : ""
+      }`}
+    >
       <select value={value} onChange={onChange} {...props}>
         {options.map((option) => (
           <option key={option.value} value={option.value}>

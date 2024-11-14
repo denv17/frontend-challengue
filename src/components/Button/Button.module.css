@@ -15,6 +15,12 @@
   line-height: var(--leading-none);
   text-align: center;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+
+  &:disabled {
+    background-color: var(--soft-gray);
+    color: var(--white);
+    pointer-events: none;
+  }
 }
 
 .btn--primary {

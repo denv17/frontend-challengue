@@ -25,6 +25,12 @@
   }
 }
 
+.select--error {
+  & select {
+    border-color: var(--red);
+  }
+}
+
 .select__icon {
   color: var(--black);
   right: var(--spacing-4);

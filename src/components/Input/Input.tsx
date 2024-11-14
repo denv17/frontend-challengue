@@ -10,14 +10,25 @@ export const Input = ({
   helperText,
   options,
   onChange,
+  onOptionChange,
+  error,
   ...props
 }: InputProps) => {
   return (
     <div
-      className={`${styles.input} ${options ? styles["input--options"] : ""}`}
+      className={`${styles.input} ${options ? styles["input--options"] : ""} ${
+        error ? styles["input--error"] : ""
+      }`}
     >
       <div className={styles.input__container}>
-        {options && <Select options={options} classes={styles.input__select} />}
+        {options && (
+          <Select
+            options={options}
+            classes={styles.input__select}
+            onChange={onOptionChange}
+            error={error}
+          />
+        )}
 
         <div className={styles.input__wrapper}>
           {label && <label className={styles.input__label}>{label}</label>}

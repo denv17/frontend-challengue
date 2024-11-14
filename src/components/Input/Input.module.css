@@ -40,8 +40,6 @@
 }
 
 .input--options {
-  color: red;
-
   & .input__select {
     & select {
       border-top-right-radius: var(--rounded-none);
@@ -71,6 +69,16 @@
       border-color: var(--black);
       outline: var(--border-1) solid var(--black);
     }
+  }
+}
+
+.input--error {
+  & input {
+    border-color: var(--red);
+  }
+
+  & .input__helper-text {
+    color: var(--red);
   }
 }
 
