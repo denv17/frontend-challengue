@@ -12,7 +12,7 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   value?: string;
   options?: { value: string; label: string }[];
   helperText?: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
