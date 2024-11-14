@@ -1,0 +1,25 @@
+.tag {
+  align-items: center;
+  border-radius: var(--rounded);
+  color: var(--black);
+  display: inline-flex;
+  font-family: var(--font-primary);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  padding: var(--spacing-0-5) var(--spacing-2);
+}
+
+.tag--primary {
+  background: linear-gradient(90deg, var(--aqua) 0%, var(--mint-green) 100%);
+}
+
+.tag--secondary {
+  background-color: var(--mint-pastel);
+}
+
+@media (min-width: 1024px) {
+  .tag {
+    font-size: var(--text-sm);
+    padding: var(--spacing-0-5) var(--spacing-2);
+  }
+}

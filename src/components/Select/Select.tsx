@@ -14,11 +14,7 @@ export const Select = ({
     <div className={`${styles.select} ${classes}`}>
       <select value={value} onChange={onChange} {...props}>
         {options.map((option) => (
-          <option
-            key={option.value}
-            value={option.value}
-            selected={option.selected}
-          >
+          <option key={option.value} value={option.value}>
             {option.label}
           </option>
         ))}

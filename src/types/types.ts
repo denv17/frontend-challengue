@@ -10,13 +10,13 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   type?: "text" | "email" | "password" | "tel";
   placeholder?: string;
   value?: string;
-  options?: { value: string; label: string; selected: boolean }[];
+  options?: { value: string; label: string }[];
   helperText?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
-  options: { value: string; label: string; selected: boolean }[];
+  options: { value: string; label: string }[];
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   helperText?: string;
@@ -26,6 +26,11 @@ export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
 export type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   checked?: boolean;
+};
+
+export type TagProps = React.HTMLAttributes<HTMLSpanElement> & {
+  label: string;
+  variant?: "primary" | "secondary";
 };
 
 export type LayoutProps = {

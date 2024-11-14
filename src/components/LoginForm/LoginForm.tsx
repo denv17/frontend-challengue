@@ -17,7 +17,7 @@ export const LoginForm = (): JSX.Element => {
           type="text"
           placeholder="Nro. de documento"
           options={[
-            { label: "DNI", value: "1", selected: true },
+            { label: "DNI", value: "1" },
             { label: "RUC", value: "2" },
           ]}
         />
