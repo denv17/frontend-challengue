@@ -1,0 +1,35 @@
+.select {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-primary);
+  gap: var(--spacing-3);
+  position: relative;
+  width: fit-content;
+  min-width: var(--spacing-32);
+
+  & select {
+    appearance: none;
+    background-color: white;
+    border-radius: var(--rounded);
+    border: var(--border-1) solid var(--slate-blue);
+    color: var(--black);
+    height: var(--spacing-14);
+    padding: var(--spacing-4) var(--spacing-8) var(--spacing-4) var(--spacing-4);
+    transition: all var(--transition-fast);
+    width: 100%;
+
+    &:focus {
+      border-color: var(--black);
+      outline: var(--border-1) solid var(--black);
+    }
+  }
+}
+
+.select__icon {
+  color: var(--black);
+  right: var(--spacing-4);
+  position: absolute;
+  top: var(--spacing-4-5);
+  width: var(--spacing-5);
+  pointer-events: none;
+}

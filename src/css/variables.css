@@ -13,6 +13,7 @@
   --soft-gray: #A9AFD9;
   --forest-green: #389E0D;
   --mint-pastel: #7DF0BA;
+  --light-gray: #FAFBFF;
   --red: #FF1C44;
 
   /* Fonts */
@@ -70,6 +71,7 @@
   --spacing-3: 0.75rem;
   --spacing-3-5: 0.875rem;  
   --spacing-4: 1rem;
+  --spacing-4-5: 1.125rem;
   --spacing-5: 1.25rem;
   --spacing-6: 1.5rem;
   --spacing-7: 1.75rem;
@@ -82,7 +84,7 @@
   --spacing-18: 4.5rem;
   --spacing-20: 5rem;
   --spacing-24: 6rem;
-  --spacing-27: 6.875rem;
+  --spacing-25: 6.25rem;
   --spacing-28: 7rem;
   --spacing-32: 8rem;
   --spacing-36: 9rem;
@@ -119,4 +121,9 @@
   --z-index-30: 30;
   --z-index-40: 40;
   --z-index-50: 50;
+
+  /* Transitions */
+  --transition-fast: 0.3s;
+  --transition-normal: 0.5s;
+  --transition-slow: 0.7s;
 }
