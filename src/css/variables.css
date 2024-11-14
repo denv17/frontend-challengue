@@ -1,20 +1,20 @@
 :root {
   /* Colors */
-  --black: #03050F;
-  --dark-purple: #0A051E;
-  --slate-blue: #5E6488;
-  --aqua: #00F4E2;
-  --mint-green: #00FF7F;
-  --light-cream: #EDEFFC;
+  --black: #03050f;
+  --dark-purple: #0a051e;
+  --slate-blue: #5e6488;
+  --aqua: #00f4e2;
+  --mint-green: #00ff7f;
+  --light-cream: #edeffc;
   --navy-blue: #141938;
-  --electric-blue: #4F4FFF;
-  --lavender-gray: #7981B2;
-  --white: #FFFFFF;
-  --soft-gray: #A9AFD9;
-  --forest-green: #389E0D;
-  --mint-pastel: #7DF0BA;
-  --light-gray: #FAFBFF;
-  --red: #FF1C44;
+  --electric-blue: #4f4fff;
+  --lavender-gray: #7981b2;
+  --white: #ffffff;
+  --soft-gray: #a9afd9;
+  --forest-green: #389e0d;
+  --mint-pastel: #7df0ba;
+  --light-gray: #fafbff;
+  --red: #ff1c44;
 
   /* Fonts */
   --font-sans: "Lato";
@@ -34,7 +34,6 @@
   --text-7xl: 2.75rem;
   --text-8xl: 3rem;
   --text-9xl: 3.25rem;
-
 
   /* Font Weights */
   --font-thin: 100;
@@ -69,7 +68,7 @@
   --spacing-2: 0.5rem;
   --spacing-2-5: 0.625rem;
   --spacing-3: 0.75rem;
-  --spacing-3-5: 0.875rem;  
+  --spacing-3-5: 0.875rem;
   --spacing-4: 1rem;
   --spacing-4-5: 1.125rem;
   --spacing-5: 1.25rem;
@@ -113,7 +112,7 @@
   --border-3: 3px;
 
   /* Shadows */
-  --shadow-lg: box-shadow: 0px 1px 32px 0px #AEACF359;
+  --shadow-lg: 0px 1px 32px 0px #aeacf359;
 
   /* Z-Index */
   --z-index-10: 10;

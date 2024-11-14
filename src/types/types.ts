@@ -32,6 +32,13 @@ export type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   error?: boolean;
 };
 
+export type RadioProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  label?: string;
+  checked?: boolean;
+  error?: boolean;
+  classes?: string;
+};
+
 export type TagProps = React.HTMLAttributes<HTMLSpanElement> & {
   label: string;
   variant?: "primary" | "secondary";
@@ -51,6 +58,19 @@ export type AuthContextType = {
   logout: () => void;
 };
 
+export type PlanContextType = {
+  user: User | null;
+  setUser: (user: User | null) => void;
+  selectedPlan: { plan: Plan; finalPrice: number } | null;
+  setSelectedPlan: (plan: { plan: Plan; finalPrice: number } | null) => void;
+  documentType: string | null;
+  setDocumentType: (documentType: string) => void;
+  documentNumber: string | null;
+  setDocumentNumber: (documentNumber: string) => void;
+  phone: string | null;
+  setPhone: (phone: string) => void;
+};
+
 export type ImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
   src: string;
   alt: string;
@@ -60,4 +80,29 @@ export type ImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
 
 export type IconProps = React.SVGAttributes<HTMLOrSVGElement> & {
   name: string;
+};
+
+export type StepperProps = {
+  steps: string[];
+  currentStep: number;
+};
+
+export type CardProps = {
+  children: React.ReactNode;
+  radioName: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export type User = {
+  name: string;
+  lastName?: string;
+  birthDay?: string;
+};
+
+export type Plan = {
+  name: string;
+  icon: string;
+  price: number;
+  description: string[];
+  age: number;
 };

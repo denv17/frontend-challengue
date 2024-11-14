@@ -1,0 +1,23 @@
+.card {
+  background-color: var(--white);
+  border-radius: var(--rounded-md);
+  border: var(--border-3) solid var(--white);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--spacing-10) var(--spacing-6);
+  position: relative;
+  transition: all var(--transition-fast);
+
+  &:has(input:focus),
+  &:has(input:checked) {
+    border-color: var(--black);
+  }
+}
+
+.card__radio {
+  position: absolute;
+  right: var(--spacing-6);
+  top: var(--spacing-4);
+}

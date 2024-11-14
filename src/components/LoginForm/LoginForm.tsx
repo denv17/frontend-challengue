@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
+import { usePlanContext } from "@/context/PlanContext";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
@@ -7,7 +8,7 @@ import styles from "./LoginForm.module.css";
 import { Checkbox } from "../Checkbox";
 
 export const LoginForm = (): JSX.Element => {
-  const [documentType, setDocumentType] = useState("1");
+  const [documentType, setDocumentType] = useState("dni");
   const [documentNumber, setDocumentNumber] = useState("");
   const [phone, setPhone] = useState("");
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
@@ -22,6 +23,12 @@ export const LoginForm = (): JSX.Element => {
 
   const { login } = useAuth();
   const navigate = useNavigate();
+
+  const {
+    setDocumentType: setCtxDocumentType,
+    setDocumentNumber: setCtxDocumentNumber,
+    setPhone: setCtxPhone,
+  } = usePlanContext();
 
   const validateForm = (): boolean => {
     const newErrors: {
@@ -57,6 +64,11 @@ export const LoginForm = (): JSX.Element => {
 
     if (validateForm()) {
       setIsLoading(true);
+
+      setCtxDocumentType(documentType);
+      setCtxDocumentNumber(documentNumber);
+      setCtxPhone(phone);
+
       login();
       await new Promise((resolve) => setTimeout(resolve, 1000));
       navigate("/planes");
@@ -110,8 +122,8 @@ export const LoginForm = (): JSX.Element => {
             setDocumentType(e.target.value)
           }
           options={[
-            { label: "DNI", value: "1" },
-            { label: "RUC", value: "2" },
+            { label: "DNI", value: "dni" },
+            { label: "RUC", value: "ruc" },
           ]}
           helperText={errors.document}
           error={errors.document}

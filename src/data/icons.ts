@@ -11,8 +11,8 @@ export const icons = [
   },
   {
     name: "chevron-left",
-    viewbox: "0 0 20 20",
-    path: '<path d="M9.10625 10L14.1063 5L15.8938 6.7875L11.6813 10L15.8938 13.2125L14.1063 15L9.10625 10Z" fill="currentColor"/>',
+    viewbox: "0 0 10 10",
+    path: '<path d="M2.55317 4.99995L5.80942 1.74683L6.69067 2.62808L4.32192 4.99995L6.69067 7.37183L5.80942 8.25308L2.55317 4.99995Z" fill="currentColor"/>',
   },
   {
     name: "chevron-right",
