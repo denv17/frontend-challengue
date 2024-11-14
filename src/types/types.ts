@@ -14,7 +14,7 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   helperText?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onOptionChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-  error?: boolean;
+  error?: boolean | string;
 };
 
 export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
@@ -23,7 +23,7 @@ export type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   helperText?: string;
   classes?: string;
-  error?: boolean;
+  error?: boolean | string;
 };
 
 export type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement> & {

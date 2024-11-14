@@ -16,7 +16,7 @@ export const LoginForm = (): JSX.Element => {
   const [errors, setErrors] = useState<{
     document?: string;
     phone?: string;
-    privacy?: string;
+    privacy?: boolean;
   }>({});
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,7 +27,7 @@ export const LoginForm = (): JSX.Element => {
     const newErrors: {
       document?: string;
       phone?: string;
-      privacy?: string;
+      privacy?: boolean;
     } = {};
 
     if (documentType === "1" && !/^\d{8}$/.test(documentNumber)) {
@@ -41,7 +41,7 @@ export const LoginForm = (): JSX.Element => {
     }
 
     if (!privacyAccepted || !commercialAccepted) {
-      newErrors.privacy = "Debes aceptar las políticas de privacidad";
+      newErrors.privacy = true;
     }
 
     setErrors(newErrors);
@@ -52,6 +52,7 @@ export const LoginForm = (): JSX.Element => {
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
+    if (isLoading) return;
     setSubmitted(true);
 
     if (validateForm()) {
