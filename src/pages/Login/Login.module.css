@@ -1,8 +1,8 @@
 .login {
   align-items: center;
   display: flex;
-  min-height: calc(100dvh - var(--spacing-40));
   min-height: calc(100vh - var(--spacing-40));
+  min-height: calc(100dvh - var(--spacing-40));
   overflow: clip;
   padding: var(--spacing-14) 0;
   position: relative;

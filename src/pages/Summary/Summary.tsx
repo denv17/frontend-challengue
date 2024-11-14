@@ -1,47 +1,60 @@
 import { usePlanContext } from "@/context/PlanContext";
+import { useNavigate } from "react-router-dom";
+import { Stepper } from "@/components/Stepper";
+import { Back } from "@/components/Back";
+import styles from "./Summary.module.css";
+import { Card } from "@/components/Card";
+import { Icon } from "@/components/Icon";
 
 export const Summary = () => {
   const { documentType, documentNumber, phone, user, selectedPlan } =
     usePlanContext();
+  const navigate = useNavigate();
 
   if (!user || !selectedPlan) {
     return <p>No hay información disponible para mostrar.</p>;
   }
 
   return (
-    <div>
-      <h1>Resumen del Plan Seleccionado</h1>
+    <section className={styles.summary}>
+      <Stepper steps={["Planes y coberturas", "Resumen"]} currentStep={1} />
 
-      <section>
-        <h2>Información del Usuario</h2>
-        <p>
-          <strong>Nombre:</strong> {user.name} {user.lastName}
-        </p>
-        <p>
-          <strong>Documento:</strong>
-          {documentType} {documentNumber}
-        </p>
-        <p>
-          <strong>Teléfono:</strong> {phone}
-        </p>
-      </section>
+      <div className={`wrapper`}>
+        <Back label="Volver" onClick={() => navigate("/planes")} />
 
-      <section>
-        <h2>Detalles del Plan</h2>
-        <p>
-          <strong>Plan Seleccionado:</strong> {selectedPlan.plan.name}
-        </p>
-        <p>
-          <strong>Precio:</strong> ${selectedPlan.finalPrice.toFixed(2)} al mes
-        </p>
+        <h1 className={styles.summary__title}>Resumen del seguro </h1>
 
-        <h3>Beneficios del Plan:</h3>
-        <ul>
-          {selectedPlan.plan.description.map((benefit, index) => (
-            <li key={index}>{benefit}</li>
-          ))}
-        </ul>
-      </section>
-    </div>
+        <Card>
+          <header className={styles["summary__card-header"]}>
+            <span>Precios calculados para:</span>
+
+            <h2>
+              <Icon name="family" /> {user.name} {user.lastName}
+            </h2>
+          </header>
+
+          <ul className={styles["summary__card-body"]}>
+            <li>
+              <h3>Responsable de pago</h3>
+              <p>
+                <span>{(documentType ?? "").toUpperCase()}: </span>{" "}
+                {documentNumber}
+              </p>
+              <p>
+                <span>Celular: </span> {phone}
+              </p>
+            </li>
+            <li>
+              <h3>Plan elegido</h3>
+              <p>{selectedPlan.plan.name}</p>
+              <p>
+                <span>Costo del Plan: </span> $
+                {selectedPlan.finalPrice.toFixed(2)} al mes
+              </p>
+            </li>
+          </ul>
+        </Card>
+      </div>
+    </section>
   );
 };

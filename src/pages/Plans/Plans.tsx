@@ -5,8 +5,10 @@ import { Icon } from "@/components/Icon";
 import { Button } from "@/components/Button";
 import { User, Plan } from "@/types/types";
 import { Stepper } from "@/components/Stepper";
+import { Back } from "@/components/Back";
 import { Card } from "@/components/Card";
 import styles from "./Plans.module.css";
+import { Tag } from "@/components/Tag";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -100,36 +102,33 @@ export const Plans = () => {
     <section className={styles.plans}>
       <Stepper steps={["Planes y coberturas", "Resumen"]} currentStep={0} />
 
-      <div className={`wrapper ${styles.plans__wrapper}`}>
-        <button onClick={() => navigate("/")} className={styles["plans__back"]}>
-          <span className={styles["plans__back-circle"]}>
-            <Icon name="chevron-left" className={styles["plans__back-icon"]} />
-          </span>
-          <span>Volver</span>
-        </button>
+      <div className={`wrapper`}>
+        <Back label="Volver" onClick={() => navigate("/")} />
 
         <header className={styles.plans__header}>
-          {isLoading ? (
-            <p>Cargando...</p>
-          ) : (
-            <div>
-              <h1>{user?.name} ¿Para quién deseas cotizar?</h1>
-              <p>Selecciona la opción que se ajuste más a tus necesidades.</p>
-            </div>
-          )}
+          <div className={styles["plans__header-info"]}>
+            <h1 className={styles.plans__title}>
+              {isLoading ? "Hola" : user?.name} ¿Para quién deseas cotizar?
+            </h1>
+            <p className={styles.plans__description}>
+              Selecciona la opción que se ajuste más a tus necesidades.
+            </p>
+          </div>
 
-          <ul>
+          <ul className={styles["plans__plan-type-list"]}>
             <li>
               <Card
                 radioName="planType"
                 onChange={() => setSelectedPlanType(1)}
               >
-                <Icon name="protection" />
-                <h3>Para mí</h3>
-                <p>
-                  Cotiza tu seguro de salud y agrega familiares si así lo
-                  deseas.
-                </p>
+                <div className={styles["plans__type-card"]}>
+                  <Icon name="protection" />
+                  <h3>Para mí</h3>
+                  <p>
+                    Cotiza tu seguro de salud y agrega familiares si así lo
+                    deseas.
+                  </p>
+                </div>
               </Card>
             </li>
             <li>
@@ -137,58 +136,60 @@ export const Plans = () => {
                 radioName="planType"
                 onChange={() => setSelectedPlanType(2)}
               >
-                <Icon name="add-user" />
-                <h3>Para alguien más</h3>
-                <p>
-                  Realiza una cotización para uno de tus familiares o cualquier
-                  persona.
-                </p>
+                <div className={styles["plans__type-card"]}>
+                  <Icon name="add-user" />
+                  <h3>Para alguien más</h3>
+                  <p>
+                    Realiza una cotización para uno de tus familiares o
+                    cualquier persona.
+                  </p>
+                </div>
               </Card>
             </li>
           </ul>
         </header>
 
         {selectedPlanType && (
-          <div>
-            <ul>
-              {isLoading ? (
-                <p>Cargando...</p>
-              ) : (
-                <>
-                  {(selectedPlanType === 1 ? forMe : forOthers).map(
-                    (plan, index) => (
-                      <li key={index}>
-                        <Card>
-                          <h2>{plan.name}</h2>
-                          <Icon name={plan.icon} />
+          <ul className={styles["plans__plans-list"]}>
+            {(selectedPlanType === 1 ? forMe : forOthers).map((plan, index) => (
+              <li key={index} className={styles["plans__plans-item"]}>
+                <Card>
+                  <div className={styles["plans__plan-card"]}>
+                    {index === 1 && (
+                      <Tag
+                        label="Plan recomendado"
+                        classes={styles["plans__plan-card-tag"]}
+                      />
+                    )}
+                    <header className={styles["plans__plan-card-header"]}>
+                      <h2>{plan.name}</h2>
 
-                          <span>Costo del plan</span>
-                          <span>
-                            ${getPriceWithDiscount(plan.price).toFixed(2)} al
-                            mes
-                          </span>
+                      <Icon name={index === 1 ? "hospital" : "home"} />
+                    </header>
 
-                          <ul>
-                            {plan.description.map((benefit, benefitIndex) => (
-                              <li key={benefitIndex}>
-                                <p>{benefit}</p>
-                              </li>
-                            ))}
-                          </ul>
+                    <div className={styles["plans__plan-card-price"]}>
+                      <span>Costo del plan</span>
+                      <span>
+                        ${getPriceWithDiscount(plan.price).toFixed(2)} al mes
+                      </span>
+                    </div>
 
-                          <Button
-                            label="Seleccionar Plan"
-                            variant="primary"
-                            onClick={() => handlePlanSelection(plan)}
-                          />
-                        </Card>
-                      </li>
-                    )
-                  )}
-                </>
-              )}
-            </ul>
-          </div>
+                    <ul className={styles["plans__plan-card-list"]}>
+                      {plan.description.map((benefit, benefitIndex) => (
+                        <li key={benefitIndex}>{benefit}</li>
+                      ))}
+                    </ul>
+
+                    <Button
+                      label="Seleccionar Plan"
+                      variant="primary"
+                      onClick={() => handlePlanSelection(plan)}
+                    />
+                  </div>
+                </Card>
+              </li>
+            ))}
+          </ul>
         )}
       </div>
     </section>

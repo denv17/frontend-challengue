@@ -37,9 +37,9 @@ export const LoginForm = (): JSX.Element => {
       privacy?: boolean;
     } = {};
 
-    if (documentType === "1" && !/^\d{8}$/.test(documentNumber)) {
+    if (documentType === "dni" && !/^\d{8}$/.test(documentNumber)) {
       newErrors.document = "El DNI debe tener 8 dígitos numéricos";
-    } else if (documentType === "2" && !/^\d{11}$/.test(documentNumber)) {
+    } else if (documentType === "ruc" && !/^\d{11}$/.test(documentNumber)) {
       newErrors.document = "El RUC debe tener 11 dígitos numéricos";
     }
 

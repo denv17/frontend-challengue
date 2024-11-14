@@ -1,0 +1,23 @@
+.back {
+  align-items: center;
+  color: var(--electric-blue);
+  display: flex;
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  gap: var(--spacing-2);
+}
+
+.back__circle {
+  align-items: center;
+  border-radius: var(--rounded-full);
+  border: var(--border-2) solid var(--electric-blue);
+  display: flex;
+  height: var(--spacing-5);
+  justify-content: center;
+  width: var(--spacing-5);
+}
+
+.back__icon {
+  flex-shrink: 0;
+  width: var(--spacing-3);
+}

@@ -1,4 +1,5 @@
 .card {
+  width: 100%;
   background-color: var(--white);
   border-radius: var(--rounded-md);
   border: var(--border-3) solid var(--white);

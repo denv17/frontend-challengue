@@ -5,6 +5,11 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   onClick?: () => void;
 };
 
+export type BackProps = {
+  label: string;
+  onClick: () => void;
+};
+
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   type?: "text" | "email" | "password" | "tel";
@@ -42,6 +47,7 @@ export type RadioProps = React.InputHTMLAttributes<HTMLInputElement> & {
 export type TagProps = React.HTMLAttributes<HTMLSpanElement> & {
   label: string;
   variant?: "primary" | "secondary";
+  classes?: string;
 };
 
 export type LayoutProps = {
