@@ -89,8 +89,8 @@ export type StepperProps = {
 
 export type CardProps = {
   children: React.ReactNode;
-  radioName: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  radioName?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export type User = {
