@@ -45,6 +45,7 @@ export const App = () => {
                   </ProtectedRoute>
                 }
               />
+              <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </Layout>
         </Router>
